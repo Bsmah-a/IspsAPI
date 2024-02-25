@@ -10,10 +10,11 @@ import Fluent
 
 struct neighborIspCreation: AsyncMigration{
     func prepare(on database: Database) async throws {
-            database.schema("neighborhoodIsp")
+        try await database.schema("neighborhoodIsp")
             .id()
             .field("n_id", .uuid, .references("neighborhood", "id"))
             .field("isp_id", .uuid, .references("Isps", "id"))
+            .create()
     }
     
   

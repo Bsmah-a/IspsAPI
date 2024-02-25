@@ -18,8 +18,8 @@ final class neighborhood: Model, Content {
     @Field(key: "name")
     var name: String
     
-    @Field(key: "City")
-    var City: String 
+    @Field(key: "city")
+    var city: String
     
     @Siblings(through: neighborhoodIsp.self, from: \.$neighberhood, to: \.$Isps)
     var isp: [Isps]
@@ -29,7 +29,7 @@ final class neighborhood: Model, Content {
     init(id: UUID? = nil, name: String, City: String) {
         self.id = id
         self.name = name
-        self.City = City
+        self.city = city
     }
     
 }

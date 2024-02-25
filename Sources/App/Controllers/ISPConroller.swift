@@ -13,7 +13,7 @@ import Vapor
 struct ISPConroller: RouteCollection{
     func boot(routes: RoutesBuilder) throws {
         
-        let Isps = routes.grouped("Isps")
+        let Isps = routes.grouped("isps_names")
         
         Isps.post(use:create)
         Isps.get(use:index)

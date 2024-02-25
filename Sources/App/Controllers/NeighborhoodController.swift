@@ -21,6 +21,7 @@ struct NeighborhoodController: RouteCollection{
     func create(req: Request)throws -> EventLoopFuture<neighborhood> {
         let neighborhood = try req.content.decode(neighborhood.self)
         return neighborhood.create(on: req.db).map{neighborhood}
+        
     }
  
     // GET
